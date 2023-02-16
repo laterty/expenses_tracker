@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
 class ExpenseController < ApplicationController
-  def index; end
+  before_action :authenticate_user!
+  def index
+    @expenses = current_user.expenses
+  end
 end

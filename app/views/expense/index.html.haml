@@ -1,2 +1,4 @@
 %h1 Expense#index
-%p Find me in app/views/expense/index.html.haml
+- @expenses.each do |expense|
+  %p= expense.name
+  %p price = expense.value
