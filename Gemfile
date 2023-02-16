@@ -58,6 +58,7 @@ gem 'haml-rails', '~> 2.0'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'factory_bot_rails', '~> 6.2.0'
   gem 'ffaker', '~> 2.20.0'
   gem 'pry', '~> 0.14.1'
   gem 'rspec-rails', '~> 5.1.2'
