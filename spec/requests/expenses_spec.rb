@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe 'Expenses' do
   describe 'GET /index' do
     it 'returns http success' do
-      get '/expense/index'
+      get '/expenses/index'
       expect(response).to have_http_status(:success)
     end
   end
