@@ -15,6 +15,12 @@ Lint/MissingSuper:
 RSpec/ExampleLength:
   Max: 20
 
+RSpec/NestedGroups:
+  Enabled: false
+
+RSpec/ContextWording:
+  Enabled: false
+
 RSpec/MultipleMemoizedHelpers:
   Max: 10
 
