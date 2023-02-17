@@ -11,8 +11,9 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div class="container">
+      <%= render partial: 'layouts/partials/flashes', locals: {flash:} %>
+      <%= yield %>
+    </div>
   </body>
 </html>
