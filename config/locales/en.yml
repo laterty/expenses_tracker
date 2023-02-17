@@ -2,6 +2,8 @@ en:
   expenses:
     messages:
       successfully_created: Your expense has been successfully created.
+      successfully_updated: Your expense has been successfully updated.
+      successfully_destroyed: Your expense has been successfully destroyed.
     partials:
       expense_form:
         placeholder:
