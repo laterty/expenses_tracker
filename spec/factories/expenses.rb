@@ -5,7 +5,7 @@ FactoryBot.define do
     name { FFaker::BaconIpsum.word }
     value { rand(0..100.0) }
     description { FFaker::BaconIpsum.sentence(10) }
-    user { User.first }
+    user
     category
   end
 end
