@@ -3,7 +3,7 @@
 class ExpensesController < ApplicationController
   before_action :authenticate_user!
   def index
-    @expenses = ExpensesQuery.query(expenses_query_params)
+    @expenses = ExpensesQuery.query(expenses_query_params).decorate
   end
 
   def show
