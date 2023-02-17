@@ -1,0 +1,17 @@
+= f.input :name,
+  placeholder: t('.placeholder.name'),
+  label: t('.label.name')
+= f.input :value,
+  placeholder: t('.placeholder.value'),
+  as: :decimal,
+  label: t('.label.value')
+= f.input :description,
+  placeholder: t('.placeholder.description'),
+  label: t('.label.description')
+= f.input :amount,
+  as: :integer,
+  placeholder: t('.placeholder.amount'),
+  label: t('.label.amount')
+= f.association :category,
+    label: t('.label.category')
+= f.button :submit, class: 'btn'

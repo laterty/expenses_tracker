@@ -1,21 +1,2 @@
-= simple_form_for expense,
-  url: expenses_path,
-  as: :expense,
-  method: expense.persisted? ? :put : :post do |f|
-  = f.input :name,
-    placeholder: t('.placeholder.name'),
-    label: t('.label.name')
-  = f.input :value,
-    placeholder: t('.placeholder.value'),
-    as: :decimal,
-    label: t('.label.value')
-  = f.input :description,
-    placeholder: t('.placeholder.description'),
-    label: t('.label.description')
-  = f.input :amount,
-    as: :integer,
-    placeholder: t('.placeholder.amount'),
-    label: t('.label.amount')
-  = f.association :category,
-    label: t('.label.category')
-  = f.button :submit, class: 'btn'
+= simple_form_for expense  do |f|
+  = render partial: 'expenses/partials/expense_fields', locals: {f:}
