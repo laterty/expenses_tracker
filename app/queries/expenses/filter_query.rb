@@ -3,13 +3,13 @@
 module Expenses
   class FilterQuery < ApplicationQuery
     statinize do
-      attribute :value, :amount, :category, :created_at
+      attribute :value, :amount, :category_id, :created_at
       attribute :expenses, default_exec: -> { Expenses.all }
     end
 
     def query
       scope = expenses
-      scope = scope.where(category:) if category
+      scope = scope.where(category_id:) if category_id
       scope = scope.where(amount:) if amount
       scope = scope.where(value:) if value
       scope = scope.where(created_at_params) if created_at

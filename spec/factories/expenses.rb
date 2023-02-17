@@ -7,5 +7,6 @@ FactoryBot.define do
     description { FFaker::BaconIpsum.sentence(10) }
     user
     category
+    created_at { Time.now }
   end
 end

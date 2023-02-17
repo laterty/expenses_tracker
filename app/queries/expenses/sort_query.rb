@@ -14,7 +14,7 @@ module Expenses
       value_desc: VALUE_DESC
     }.freeze
 
-    DEFAULT_SORT_KEY = CREATED_AT_ASC
+    DEFAULT_SORT_KEY = CREATED_AT_DESC
 
     statinize do
       before { @sort = generate_order(sort&.to_sym) }
