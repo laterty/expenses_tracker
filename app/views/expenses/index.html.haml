@@ -1,5 +1,8 @@
 %h1 Expense#index
+= link_to 'New expense', new_expense_path
 - @expenses.each do |expense|
   %p= expense.name
   %p= "price: #{expense.value}"
+  = link_to 'Edit expense', edit_expense_path(expense)
+  = button_to 'Delete expense', expense_path(expense), method: :delete
   %hr.mt-1.mb-1
