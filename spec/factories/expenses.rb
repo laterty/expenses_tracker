@@ -6,6 +6,6 @@ FactoryBot.define do
     value { rand(0..100.0) }
     description { FFaker::BaconIpsum.sentence(10) }
     user { User.first }
-    category { Category.all.sample }
+    category
   end
 end
