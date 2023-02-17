@@ -1,5 +1,11 @@
 %h1 Expense#index
 = link_to 'New expense', new_expense_path
+- Category.all.each do |category|
+  = link_to "#{category.name}", expenses_path(category_id: category.id)
+%hr.mt-1.mb-1
+%br
+= link_to 'Newest first', expenses_path(sort: 'created_at_desc')
+= link_to 'Oldest first', expenses_path(sort: 'created_at_asc')
 %br
 - @expenses.each do |expense|
   =link_to expense.name, expense_path(expense)
