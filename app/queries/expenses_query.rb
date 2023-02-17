@@ -4,7 +4,7 @@
 
 class ExpensesQuery < ApplicationQuery
   statinize do
-    attribute :name, :value, :amount, :sort, :created_at, :category_id
+    attribute :value, :amount, :sort, :created_at, :category_id
     attribute :base_scope, default_exec: -> { Expense.all }
   end
 
@@ -17,7 +17,7 @@ class ExpensesQuery < ApplicationQuery
   private
 
   def filtered_scope(scope)
-    Expenses::FilterQuery.query(expenses: scope, name:, value:, amount:, category_id:, created_at:)
+    Expenses::FilterQuery.query(expenses: scope, value:, amount:, category_id:, created_at:)
   end
 
   def sorted_scope(scope)

@@ -3,7 +3,7 @@
 class ExpensesController < ApplicationController
   before_action :authenticate_user!
   def index
-    @expenses = current_user.expenses
+    @expenses = ExpensesQuery.query(expenses_query_params)
   end
 
   def show
@@ -43,6 +43,14 @@ class ExpensesController < ApplicationController
   end
 
   private
+
+  def expenses_query_params
+    expenses_params.merge(base_scope: current_user.expenses)
+  end
+
+  def expenses_params
+    params.permit(:value, :amount, :category_id, :created_at, :sort)
+  end
 
   def expense_params
     params.require(:expense).permit(:name, :value, :amount, :description, :category_id)
