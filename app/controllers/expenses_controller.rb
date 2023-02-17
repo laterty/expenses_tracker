@@ -14,6 +14,10 @@ class ExpensesController < ApplicationController
     @expense = current_user.expenses.new
   end
 
+  def edit
+    @expense = current_user.expenses.find(params[:id])
+  end
+
   def create
     @expense = current_user.expenses.new(expense_params)
     if @expense.save
@@ -21,6 +25,21 @@ class ExpensesController < ApplicationController
     else
       render action: 'new'
     end
+  end
+
+  def update
+    @expense = current_user.expenses.find(params[:id])
+    if @expense.update(expense_params)
+      redirect_to expenses_path, notice: I18n.t('expenses.messages.successfully_updated')
+    else
+      render action: 'edit'
+    end
+  end
+
+  def destroy
+    @expense = current_user.expenses.find(params[:id])
+    @expense.destroy
+    redirect_to expenses_path, notice: I18n.t('expenses.messages.successfully_destroyed')
   end
 
   private
