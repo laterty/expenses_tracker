@@ -10,12 +10,15 @@
 = link_to 'Newest first', expenses_path(sort: 'created_at_desc')
 = link_to 'Oldest first', expenses_path(sort: 'created_at_asc')
 %br
-- @expenses.object.each do |expense|
-  =link_to expense.name, expense_path(expense)
-  %p= "price: #{expense.value}"
-  = link_to 'Edit expense', edit_expense_path(expense)
-  = button_to 'Delete expense',
-    expense_path(expense),
-    method: :delete,
-    class: "btn btn-danger"
-  %hr.mt-1.mb-1
+- @expenses.each do |expense|
+  .card.mt-2
+    .card-body.d-inline-flex.justify-content-around
+      =link_to expense.name, expense_path(expense)
+      %p= expense.value
+      %p= expense.amount
+      %p= expense.short_description
+      = link_to 'Edit expense', edit_expense_path(expense)
+      = button_to 'Delete expense',
+        expense_path(expense),
+        method: :delete,
+        class: "btn btn-danger"
