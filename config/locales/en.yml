@@ -5,7 +5,7 @@ en:
       successfully_updated: Your expense has been successfully updated.
       successfully_destroyed: Your expense has been successfully destroyed.
     partials:
-      expense_form:
+      expense_fields:
         placeholder:
           name: Puts your Name
           value: Puts your Value
