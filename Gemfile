@@ -57,6 +57,7 @@ gem 'devise', '~> 4.8.1'
 gem 'haml-rails', '~> 2.0'
 
 # Use statinize for statinization, for more information see https://github.com/Vagab/statinize
+gem 'draper', '~> 4.0.2'
 gem 'statinize', '~> 0.4.7'
 
 group :development, :test do
