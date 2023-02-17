@@ -1,7 +1,7 @@
 en:
   expenses:
     messages:
-      successfully_created: Your goal has been successfully created.
+      successfully_created: Your expense has been successfully created.
     partials:
       expense_form:
         placeholder:

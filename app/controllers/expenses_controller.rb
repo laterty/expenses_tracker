@@ -17,7 +17,7 @@ class ExpensesController < ApplicationController
   def create
     @expense = current_user.expenses.new(expense_params)
     if @expense.save
-      redirect_to expenses_path, notice: I18n.t('expenses.successfuly_created')
+      redirect_to expenses_path, notice: I18n.t('expenses.messages.successfully_created')
     else
       render action: 'new'
     end
@@ -26,6 +26,6 @@ class ExpensesController < ApplicationController
   private
 
   def expense_params
-    params.require(:expense).permit(:name, :value, :amount, :description, :category)
+    params.require(:expense).permit(:name, :value, :amount, :description, :category_id)
   end
 end
