@@ -13,6 +13,8 @@
             = link_to 'Log in', new_user_session_path, class: 'btn btn-light'
             = link_to 'Sign up', new_user_registration_path, class: 'btn btn-light'
         %li.nav-item
+          = link_to 'Shared', expense_sharings_path, class: 'nav-link active'
+        %li.nav-item
           - if user_signed_in?
             = button_to 'Log out',
               destroy_user_session_path,
