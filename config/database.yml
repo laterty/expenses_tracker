@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
   database: expenses_tracker_production
   username: expenses_tracker
   password: <%= ENV["EXPENSES_TRACKER_DATABASE_PASSWORD"] %>
