@@ -4,8 +4,8 @@ class ExpenseSharingsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @shared_expenses = current_user.shared_expenses
-    @sended_expenses = current_user.sended_expenses
+    @shared_expenses = current_user.shared_expenses.includes(:sender)
+    @sended_expenses = current_user.sended_expenses.includes(:recipient)
   end
 
   def show
