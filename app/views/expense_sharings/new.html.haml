@@ -1,0 +1,3 @@
+= simple_form_for @expense_sharing do |f|
+  = f.association :recipient, collection: @users_list, prompt: 'Choose user'
+  = f.button :submit, 'Share', class: 'btn btn-dark'
