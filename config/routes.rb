@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root to: "home#index"
   resources :expenses
-  resources :expense_sharings, only: %i[index show delete create]
+  resources :expense_sharings, except: %i[update edit]
 end
