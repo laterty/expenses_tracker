@@ -1,6 +1,7 @@
 en:
   expense_sharings:
     messages:
+      successfully_shared: You successfully shared your expenses
       successfully_destroy: You successfully stop sharing your expenses
   expenses:
     messages:

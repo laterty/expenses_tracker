@@ -3,6 +3,7 @@
 %p= @expenses.sum_value
 = link_to 'New expense', new_expense_path
 = link_to 'All', expenses_path
+= link_to 'Share', new_expense_sharing_path, class: 'btn btn-primary'
 - Category.all.each do |category|
   = link_to "#{category.name}", expenses_path(category_id: category.id)
 %hr.mt-1.mb-1
