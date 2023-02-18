@@ -58,19 +58,19 @@ gem 'haml-rails', '~> 2.0'
 
 # Use statinize for statinization, for more information see https://github.com/Vagab/statinize
 gem 'draper', '~> 4.0.2'
+gem 'pry', '~> 0.14.1'
+gem 'simple_form', '~> 5.1.0'
 gem 'statinize', '~> 0.4.7'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'factory_bot_rails', '~> 6.2.0'
   gem 'ffaker', '~> 2.20.0'
-  gem 'pry', '~> 0.14.1'
   gem 'rspec-rails', '~> 5.1.2'
   gem 'rubocop', '~> 1.36.0'
   gem 'rubocop-performance', '~> 1.15.0'
   gem 'rubocop-rails', '~> 2.16.1', require: false
   gem 'rubocop-rspec', '~> 2.13.2', require: false
-  gem 'simple_form', '~> 5.1.0'
 end
 
 group :development do
