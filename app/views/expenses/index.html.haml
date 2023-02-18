@@ -1,15 +1,26 @@
 %h1 Expense#index
 %p Total value:
 %p= @expenses.sum_value
-= link_to 'New expense', new_expense_path
-= link_to 'All', expenses_path
 = link_to 'Share', new_expense_sharing_path, class: 'btn btn-primary'
-- Category.all.each do |category|
-  = link_to "#{category.name}", expenses_path(category_id: category.id)
+= link_to 'Add expense', new_expense_path, class: 'btn btn-primary'
+
+%ul.nav.justify-content-center
+  %li.nav-item
+    = link_to 'All', expenses_path, class: 'nav-link link-secondary'
+  - Category.all.each do |category|
+    %li.nav-item
+      = link_to "#{category.name}", category_expenses_path(category_id: category.id), class: 'nav-link link-secondary'
+  %li.nav-item.dropdown
+    %a#dropdownMenuLink.btn.btn-secondary.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
+      Sort by
+    %ul.dropdown-menu{"aria-labelledby" => "dropdownMenuLink"}
+      %li
+        = link_to 'Newest first', expenses_path(sort: 'created_at_desc'), class: 'dropdown-item'
+      %li
+        = link_to 'Oldest first', expenses_path(sort: 'created_at_asc'), class: 'dropdown-item'
+      %li
+        %a.dropdown-item{:href => "#"} Something else herep
 %hr.mt-1.mb-1
-%br
-= link_to 'Newest first', expenses_path(sort: 'created_at_desc')
-= link_to 'Oldest first', expenses_path(sort: 'created_at_asc')
 %br
 - @expenses.each do |expense|
   .card.mt-2
