@@ -7,11 +7,7 @@
         %li.nav-item
           = link_to 'Home', root_path, class: 'nav-link active'
         %li.nav-item
-          - if user_signed_in?
-            = link_to 'Your expenses', expenses_path, class: 'nav-link'
-          - else
-            = link_to 'Log in', new_user_session_path, class: 'btn btn-light'
-            = link_to 'Sign up', new_user_registration_path, class: 'btn btn-light'
+          = link_to 'Your expenses', expenses_path, class: 'nav-link'
         %li.nav-item
           = link_to 'Shared', expense_sharings_path, class: 'nav-link active'
         %li.nav-item
@@ -20,3 +16,6 @@
               destroy_user_session_path,
               method: :delete,
               class: "btn btn-light"
+          - else
+            = link_to 'Log in', new_user_session_path, class: 'btn btn-light'
+            = link_to 'Sign up', new_user_registration_path, class: 'btn btn-light'
