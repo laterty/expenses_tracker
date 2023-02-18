@@ -1,0 +1,11 @@
+Hey here you can find lists of expenses shared with you:
+
+- @shared_expenses.each do |shared_expense|
+  .card.mt-2
+    .card-body.d-inline-flex.justify-content-around
+      =link_to "#{shared_expense.sender.email}", expense_sharing_path(shared_expense)
+
+
+You share your expenses with:
+- current_user.followers.each do |recipient|
+  %p= recipient.email

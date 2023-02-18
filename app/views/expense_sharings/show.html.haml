@@ -1,0 +1,12 @@
+%h1= @sender.email
+- @sender.expenses.each do |expense|
+  .card.mt-2
+    .card-body.d-inline-flex.justify-content-around
+      =link_to expense.name, expense_path(expense)
+      %p= expense.value
+      %p= expense.amount
+      = link_to 'Edit expense', edit_expense_path(expense)
+      = button_to 'Delete expense',
+          expense_path(expense),
+          method: :delete,
+          class: "btn btn-danger"
