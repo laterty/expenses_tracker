@@ -13,4 +13,8 @@ class User < ApplicationRecord
                              inverse_of: :recipient
   has_many :followings, class_name: 'User', through: :shared_expenses, source: :sender
   has_many :followers, class_name: 'User', through: :sended_expenses, source: :recipient
+
+  def to_s
+    email
+  end
 end
