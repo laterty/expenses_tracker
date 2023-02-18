@@ -18,8 +18,6 @@
         = link_to 'Newest first', expenses_path(sort: 'created_at_desc'), class: 'dropdown-item'
       %li
         = link_to 'Oldest first', expenses_path(sort: 'created_at_asc'), class: 'dropdown-item'
-      %li
-        %a.dropdown-item{:href => "#"} Something else herep
 %hr.mt-1.mb-1
 %br
 - @expenses.each do |expense|
