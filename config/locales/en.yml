@@ -1,4 +1,7 @@
 en:
+  expense_sharings:
+    messages:
+      successfully_destroy: You successfully stop sharing your expenses
   expenses:
     messages:
       successfully_created: Your expense has been successfully created.
