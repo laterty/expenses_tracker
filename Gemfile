@@ -54,7 +54,6 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 
 gem 'devise', '~> 4.8.1'
-gem 'factory_bot_rails', '~> 6.2.0'
 gem 'haml-rails', '~> 2.0'
 
 # Use statinize for statinization, for more information see https://github.com/Vagab/statinize
@@ -64,6 +63,7 @@ gem 'simple_form', '~> 5.1.0'
 gem 'statinize', '~> 0.4.7'
 
 group :development, :test do
+  gem 'factory_bot_rails', '~> 6.2.0'
   gem 'ffaker', '~> 2.20.0'
   gem 'rspec-rails', '~> 5.1.2'
   gem 'rubocop', '~> 1.36.0'
