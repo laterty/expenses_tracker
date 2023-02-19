@@ -56,6 +56,9 @@ RSpec.configure do |config|
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
 
+  # Include custom helpers
+  config.include Helpers::UserActions, type: :feature
+
   # For signing_in user when test requests
   config.include Devise::Test::IntegrationHelpers, type: :request
 
