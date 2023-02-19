@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-user1 = FactoryBot.create(:user, email: 'yolo@yolo.com', password: 'Yolo123*')
-user2 = FactoryBot.create(:user, email: 'polo@polo.com', password: 'Polo123*')
+user1 = FactoryBot.create(:user, email: 'yolo.yolo@yolo.com', password: 'Yolo123*')
+user2 = FactoryBot.create(:user, email: 'polo.polo@polo.com', password: 'Polo123*')
 
 %w[Traveling Clothing Taxi Cafes Shops Other].each do |name|
   category = FactoryBot.create(:category, name:)
