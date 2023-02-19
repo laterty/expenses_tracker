@@ -7,7 +7,7 @@ module Helpers
       within '#new_user' do
         fill_in I18n.t('devise.sessions.new.label.email'), with: user.email
         fill_in I18n.t('devise.sessions.new.label.password'), with: user.password
-        click_button(I18n.t('devise.sessions.new.log_in'))
+        click_button(I18n.t('devise.sessions.new.submit_button'))
       end
     end
   end
