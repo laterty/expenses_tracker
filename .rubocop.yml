@@ -12,6 +12,9 @@ RSpec/MultipleExpectations:
 Lint/MissingSuper:
   Enabled: false
 
+Naming/MemoizedInstanceVariableName:
+  Enabled: false
+
 RSpec/ExampleLength:
   Max: 20
 

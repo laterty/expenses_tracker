@@ -11,7 +11,7 @@ class ExpensesController < ApplicationController
   end
 
   def new
-    @expense = current_user.expenses.new
+    @expense ||= current_user.expenses.new
   end
 
   def edit
@@ -23,7 +23,7 @@ class ExpensesController < ApplicationController
     if @expense.save
       redirect_to expenses_path, notice: I18n.t('expenses.messages.successfully_created')
     else
-      render action: 'new'
+      render :new
     end
   end
 

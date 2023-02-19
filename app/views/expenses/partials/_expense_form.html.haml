@@ -1,2 +1,2 @@
-= simple_form_for expense  do |f|
+= simple_form_for expense, data: { turbo: false }  do |f|
   = render partial: 'expenses/partials/expense_fields', locals: {f:}
