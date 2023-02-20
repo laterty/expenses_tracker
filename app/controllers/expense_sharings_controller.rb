@@ -5,7 +5,7 @@ class ExpenseSharingsController < ApplicationController
 
   def index
     @shared_expenses = current_user.shared_expenses.includes(:sender)
-    @sended_expenses = current_user.sended_expenses.includes(:recipient)
+    @sent_expenses = current_user.sent_expenses.includes(:recipient)
   end
 
   def show
@@ -13,12 +13,12 @@ class ExpenseSharingsController < ApplicationController
   end
 
   def new
-    @expense_sharing = current_user.sended_expenses.new
+    @expense_sharing = current_user.sent_expenses.new
     @users_list = users_list_for_share
   end
 
   def create
-    @expense_sharing = current_user.sended_expenses.new(expense_sharing_params)
+    @expense_sharing = current_user.sent_expenses.new(expense_sharing_params)
     return unless @expense_sharing.save
 
     redirect_to expenses_path, notice: I18n.t('expense_sharings.messages.successfully_shared')

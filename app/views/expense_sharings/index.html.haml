@@ -7,8 +7,8 @@
 
 
 %h3 You share your expenses with:
-- @sended_expenses.each do |sended_expense|
+- @sent_expenses.each do |sent_expense|
   .card.mt-2
     .card-body.d-inline-flex.justify-content-around
-      %p= sended_expense.recipient.email
-      = button_to "Stop share", expense_sharing_path(sended_expense), method: :delete , class: 'btn btn-danger'
+      %p= sent_expense.recipient.email
+      = button_to "Stop share", expense_sharing_path(sent_expense), method: :delete , class: 'btn btn-danger'
